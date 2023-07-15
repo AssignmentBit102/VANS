@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Submitted | The VANS</title>
+    <link rel="stylesheet" type="text/css" href="messageStyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Retrieve query parameters from URL
+            var params = new URLSearchParams(window.location.search);
+            var name = params.get('name');
+            var email = params.get('email');
+            var subject = params.get('subject');
+            var message = params.get('message');
+
+            // Display the form data
+            $('#nameDisplay').text(name);
+            $('#emailDisplay').text(email);
+            $('#subjectDisplay').text(subject); // Corrected to 'subject' instead of 'email'
+            $('#messageDisplay').text(message);
+        });
+    </script>
+</head>
+<body>
+    <h1>Message Submitted!</h1>
+    <h3>Here are the details you provided:</h3>
+
+    <div class="details">
+        <p>
+            Name: <span id="nameDisplay"></span> <br>
+            Email: <span id="emailDisplay"></span> <br>
+            Subject: <span id="subjectDisplay"></span> <br>
+            Message: <span id="messageDisplay"></span>
+        </p>
+    </div>
+    <a href="../index.html">
+        <img id="fixed-image" src="img/home.png" alt="Fixed Image">
+    </a>
+</body>
+</html>
