@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home | The VANS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="index.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <nav>
+    <div class="top-nav">
+      <a href="signup/signup.html" id="signin-link">Sign In</a>
+      <a href="signup/signup.html" id="joinnow-link">Join Now</a>
+      <div class="top-dropdown">
+        <button class="top-dropbtn" id="language-button">Language</button>
+        <div class="top-dropdown-content">
+          <div class="language">
+            <a href="#" onclick="changeLanguage('en')" id="english">English</a>
+            <a href="#" onclick="changeLanguage('malay')" id="malay">Malay</a>
+            <a href="#" onclick="changeLanguage('chinese')" id="chinese">Chinese</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-dropdown">
+        <button class="top-dropbtn" id="currency-button">Currency</button>
+        <div class="top-dropdown-content">
+          <div class="currency">
+            <a href="#">USD</a>
+            <a href="#">MYR</a>
+            <a href="#">GBP</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-nav" id="bottom-nav">
+      <a href="index.html" id="home-link">Home</a>
+      <a href="about/about.html" id="about-link">About</a>
+      <div class="bottom-dropdown">
+        <button class="bottom-dropbtn" id="rooms-suites-link" onclick="redirectToRoomPage()">Rooms & Suites</button>
+        <div class="bottom-dropdown-content">
+          <div class="rooms-suites">
+            <a href="rooms&suites/deluxeroom.html" id="deluxeRoom">Deluxe Room</a>
+            <a href="rooms&suites/deluxegarden.html" id="deluxeGardenView">Deluxe Garden View</a>
+            <a href="rooms&suites/familySuite.html" id="familySuite">Family Suite</a>
+          </div>
+        </div>
+      </div>
+      <a href="services/restaurant.html" id="services-link">Services</a>
+      <a href="promos&offers/promos&offers.html" id="promos-offers-link">Promos & Offers</a>
+      <a href="testimonials/testimonials.html" id="testimonials-link">Testimonials</a>
+      <a href="contact/contact.html" id="contact-link">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <p id="welcome-text">WELCOME TO</p>
+      <h1 id="hotel-name">THE VANS</h1>
+      <h2 id="hotel-type">Resort & Spa Hotel</h2>
+      <h3 id="tagline">Where City Chic Meets Hotel Bliss!</h3>
+    </div>
+  </main>
+
+  <div class="search-bar">
+    <div class="group">
+      <img src="indexImg/calendarIcon.jpg" alt="Calendar" id="calendar">
+      <input type="text" id="indates" class="datepicker" placeholder="Start Date">
+      <label id="night-label"></label>
+      <input type="text" id="outdates" class="datepicker" placeholder="End Date">
+    </div>
+
+    <div class="group">
+      <img src="indexImg/userIcon.png" alt="Person" id="person">
+      <input type="number" id="rooms" placeholder="Rooms" min="1" value="1">
+      <label>Room(s),</label>
+      <input type="number" id="adults" placeholder="Adults" min="1" value="1">
+      <label>Adult(s),</label>
+      <input type="number" id="children" placeholder="Children" min="0" value="0">
+      <label>Children</label>
+    </div>
+    
+    <div class="group">
+      <img src="indexImg/tagIcon.png" alt="Tag" id="tag">
+      <input type="text" id="special-code" placeholder="Special Code">
+    </div>
+    <button>Search</button>
+  </div>
+</body>
+</html>
