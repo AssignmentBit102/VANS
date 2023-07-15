@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    color: rgb(124, 72, 54);
+    background-color: #f0ece4;
+  }
+  
+  #fixed-image {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    max-width: 50px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  
+.column1,
+.column2 {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.column1 {
+  margin-right: 10px;
+}
+
+.column2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.ima{
+  max-width: 510px;
+  max-height: 290px;
+  
+}
+
+.ima2{
+  max-width: 510px;
+  max-height: 290px;
+  padding-top: 90px;
+}
+
+p{
+  padding-top: 20px;
+  max-width: 510px;
+}
+
+#im {
+  padding-top: 90px;
+  padding-bottom: 15px;
+}
+
+h1 {
+  font-size: 40px;
+  padding-bottom: 20px;
+  font-weight: 1;
+}
+
+p {
+  font-size: 18px;
+}
+
+.box {
+  margin-left: 0px;
+  border: solid 1px rgb(87, 48, 30);
+  max-width: 490px;
+  text-align: center;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  /* Add media query for mobile devices */
+  .container {
+    flex-direction: column;
+  }
+
+  .column1,
+  .column2 {
+    flex-basis: 95%; /* Set the width of each column to 100% on mobile devices */
+  }
+  
+  .ima, .ima2{
+      max-width: 450px;
+  }
+
+  .ima2{
+      padding-left: 8px;
+  }
+
+}
