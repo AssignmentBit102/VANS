@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact | The VANS & Contact</title>
+        <link rel="stylesheet" type="text/css" href="contactStyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#contactForm').submit(function(e) {
+                    e.preventDefault(); // Prevent form submission
+
+                    // Get form data
+                    var name = $('#name').val();
+                    var email = $('#email').val();
+                    var subject = $('#subject').val();
+                    var message = $('#message').val();
+
+                    // Construct the URL with query parameters
+                    var url = 'message.html' + '?name=' + encodeURIComponent(name) +
+                        '&email=' + encodeURIComponent(email) +
+                        '&subject=' + encodeURIComponent(subject) +
+                        '&message=' + encodeURIComponent(message);
+
+                    // Redirect to the second page
+                    window.location.href = url;
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="ask">
+                <div class="content">
+                    <h3>GOT A QUESTION?</h3>
+                    <h1>ASK VANS</h1>
+                    <p>We are here to help answer any question you might have!</p>
+                </div>
+                <br>
+
+                <form id="contactForm">
+                    <div class="inputGroup">
+                        <label for="name">NAME:</label>
+                        <input type="text" id="name" name="name" class="inputFormat" required>
+                    </div>
+                    <br>
+        
+                    <div class="inputGroup">
+                        <label for="email">EMAIL:</label>
+                        <input type="email" id="email" name="email" class="inputFormat" required>
+                    </div>
+                    <br>
+        
+                    <div class="inputGroup">
+                        <label for="subject">SUBJECT:</label>
+                        <input type="text" id="subject" name="subject" class="inputFormat" required>
+                    </div>
+                    <br>
+
+                    <div class="inputGroup">
+                        <label for="message">MESSAGE:</label>
+                        <textarea name="message" id="message" class="inputFormat" required></textarea>
+                    </div>
+                    <br>
+
+                    <input type="submit" value="SEND" class="buttonFormat">
+                </form>
+            </div>
+
+            <div class="contact">
+                <div class="reservationsOffice">
+                    <h2>Reservations Office</h2>
+                    <p class="location">136,<br>Jalan Changkat Thambi Dollah,<br>Bukit Bintang,<br>Kuala Lumpur.</p>
+                    <p class="phoneNo">03-62712745</p>
+                    <p class="email">hello@vansreservation.com</p>
+                </div>
+
+                <div class="officeHours">
+                    <h2>Office Hours</h2>
+                    <div class="hours">
+                        Monday to Friday<br>9.00 am to 6.00 pm
+                        <br><br>
+                        Saturday<br>9.00 am to 12.00 noon
+                    </div>
+                </div>
+
+                <div class="getSocial">
+                    <h2>Get Social</h2>
+                    <div class="logo">
+                        <a href="https://www.facebook.com"><img src="img/fbLogo.png" height="75" width="75" alt="Facebook"></a>
+                        <a href="https://www.twitter.com"><img src="img/twtLogo.png" height="75" width="75" alt="Twitter"></a>
+                        <a href="https://www.instagram.com"><img src="img/igLogo.png" height="75" width="75" alt="Instagram"></a>
+                    </div>
+                    <div class="tag">
+                        <p>Tag us in your photos!</p>
+                    </div>
+                </div>
+                <a href="../index.html">
+                    <img id="fixed-image" src="img/home.png" alt="Fixed Image">
+                  </a>
+            </div>
+        </div>
+    </body>
+</html>
