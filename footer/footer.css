@@ -1,0 +1,49 @@
+
+body {
+  color: white;
+  background-color: #98743c;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: center; /* Aligns the content horizontally in the center */
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+
+.container > div {
+  flex-basis: calc(33.33% - 20px);
+  margin-bottom: 20px;
+}
+
+.container2 {
+  text-align: center; /* Aligns the content within container2 */
+}
+
+.bold{
+  font-weight: bold;
+}
+
+
+
+img {
+  max-width: 30px;
+}
+
+a{
+    color: white;
+    text-align: left;
+    text-decoration: none;
+}
+
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .container > div {
+    flex-basis: 100%;
+  }
+}
+
