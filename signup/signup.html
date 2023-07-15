@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link href="signup.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#contactForm').submit(function(e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Get form data
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+
+        // Construct the URL with query parameters
+        var url = 'message.html' + '?name=' + encodeURIComponent(name) +
+          '&email=' + encodeURIComponent(email) +
+          '&subject=' + encodeURIComponent(subject) +
+          '&message=' + encodeURIComponent(message);
+
+        // Redirect to the second page
+        window.location.href = url;
+      });
+    });
+  </script>
+ 
+  <script>
+    function showText(target) {
+      var textElement;
+      var textContent;
+
+      if (target === 'policy') {
+        textElement = document.getElementById('policy-text');
+        textContent = "This means we may use your information for our company VANS";
+      } else if (target === 'terms') {
+        textElement = document.getElementById('terms-text');
+        textContent = "Conditions";
+      }
+
+      if (textElement) {
+        textElement.textContent = textContent;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <a href="../index.html">
+    <img id="fixed-image" src="img/home.png" alt="Fixed Image">
+  </a>
+
+  <div id="c1">
+    <h1>Join Now</h1>
+    <form>
+      <div id="cat">
+        <h2 class="white">&nbsp;YOUR PROFILE</h2>
+      </div>
+
+      <div class="one">
+        <h2>Profile Information</h2>
+          <select id="prefix" name="prefix" required>
+            <option value="" disabled selected>Prefix</option>
+            <option value="Miss">Miss</option>
+            <option value="Ms">Ms</option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Mx">Mx</option>
+            <option value="Datuk">Datuk</option>
+            <option value="Dato">Dato</option>
+            <option value="Datin">Datin</option>
+          </select>
+          <input type="text" placeholder="First Name*" required> &nbsp;
+          <input type="text" placeholder="Last Name*" required>
+          <br><br>
+
+          <input type="number" placeholder="Phone*" required> <br><br>
+
+          <input type="email" placeholder="Email Address*" required> &nbsp;
+          <input type="email" placeholder="Confirm Email Address*" required>
+
+      </div><br>
+
+      <div class="two">
+        <h2>Address</h2>
+
+        <select id="country" name="country" required>
+          <option value="" disabled selected>Select Country / Region*</option>
+          <option value="malaysia">Malaysia</option>
+          <option value="singapore">Singapore</option>
+          <option value="indonesia">Indonesia</option>
+          <option value="thailand">Thailand</option>
+          <option value="vietnam">Vietnam</option>
+          <option value="india">India</option>
+        </select><br><br>
+
+        <input type="text" placeholder="Address**" required> <br><br>
+
+        <input type="text" placeholder="City*" required> &nbsp;
+        <input type="number" placeholder="ZIP / Postal Code*" required>
+        <br><br>
+      </div><br>
+
+      <div class="three">
+        <h2>Acknowledgement</h2>
+        <label for="policy" class="white">*I agree to the Prefer Hotel Rewards program privacy policy.</label>
+        <input type="checkbox" id="policy" name="policy" class="checkbox" required>
+        <p class="orange" id="policy-link" onclick="showText('policy')">Privacy Policy</p>
+        <p id="policy-text"></p>
+        <br>
+        <label for="terms" class="white">*I agree to the Prefer Hotel Rewards program terms and conditions.</label>
+        <input type="checkbox" id="terms" name="terms" class="checkbox" required>
+        <p class="orange" id="terms-link" onclick="showText('terms')">Terms & Condition</p>
+        <p id="terms-text"></p>
+      </div><br>
+
+      <div class="four">
+        <input id="cancel" type="reset" value="CANCEL"> &nbsp;
+        <input id="create" type="submit" value="CREATE">
+      </div>
+    </form>
+  </div>
+
+  <div id="c2">
+    <h1>Sign In</h1>
+    <div class="five">
+      <br><input type="text" placeholder="Username" required><br><br>
+      <input type="password" placeholder="Password"><br><br>
+
+      <label class="white">Book as a travel agent</label>
+      <input type="checkbox" id="book" name="book" style="float: left;" required> <br><br>
+
+      <input type="button" value="SIGN IN">
+
+      <p class="orange"><a href="home.html" class="orange">Forgot Password?</a><br></p>
+
+      <p class="white">----------------------------------</p>
+
+      <p class="white">Not an 1 Prefer member?</p>
+
+      <p class="orange">Join now for savings and <br>instant member benefits.</p>
+    </div>
+  </div>
+</body>
+
+</html>
